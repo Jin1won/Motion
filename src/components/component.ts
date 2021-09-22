@@ -1,4 +1,5 @@
 export interface Component {
+    // 어떤 컴포넌트를 전달받은 곳에 붙인다!!!!!!!
     attachTo(parent: HTMLElement, position?: InsertPosition): void;
     removeFrom(parent:HTMLElement): void;
   }
@@ -15,6 +16,7 @@ export class BaseComponent<T extends HTMLElement> implements Component {
     }
   
     attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
+      // 현재 html요소를 parent에 붙인다.
       parent.insertAdjacentElement(position, this.element);
     }
 

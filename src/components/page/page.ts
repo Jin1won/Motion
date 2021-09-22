@@ -19,7 +19,7 @@ export class PageItemComponent extends BaseComponent<HTMLElement> implements Sec
     constructor(){
         super(`<li class="page-item">
                     <section class="page-item__body"></section>
-                    <dic class="page-item__controls">
+                    <div class="page-item__controls">
                         <button class="close">&times;</button>
                     </div>
                 </li>`);
@@ -42,8 +42,11 @@ export class PageComponent extends BaseComponent<HTMLUListElement>{
         super('<ul class="page"></ul>');
     }
     addChild(section:Component){
+        // 전달받은 것들을 pageItemComponent로 감싸준다!!!
         const item = new this.pageItemConstructor();
+        // 새로만든 pageItem에 전달받은 section을 추가해준다.
         item.addChild(section);
+        // 만든 아이템을 현재 페이지에 붙여준다. 여기서의 this는 페이지의 element를 나타낸다.
         item.attachTo(this.element, 'beforeend');
         item.setOnCloseListener(()=>{
             item.removeFrom(this.element);
