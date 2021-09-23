@@ -1,5 +1,6 @@
+import { TextData } from './../dialog.js';
 import { BaseComponent } from './../../component.js';
-export class TextSectionInput extends BaseComponent<HTMLElement> {
+export class TextSectionInput extends BaseComponent<HTMLElement> implements TextData{
   constructor() {
     super(`<div>
             <div class="form__container">
@@ -12,7 +13,7 @@ export class TextSectionInput extends BaseComponent<HTMLElement> {
             </div>
         </div>`);
   }
-// getter를 호출하는 시점에 dom 요소에 있는 url을 읽어온다.
+// getter를 호출하는 시점에 dom 요소에 있는 body를 읽어온다.
   get title(): string {
     const element = this.element.querySelector('#title')! as HTMLInputElement;
     return element.value;
