@@ -41,6 +41,10 @@ class App {
       TextSectionInput, 
       (input:TextSectionInput) => new TodoComponent(input.title, input.body)
     );
+    this.page.addChild(new ImageComponent('Image Title', 'https://picsum.photos/800/400'));
+    this.page.addChild(new VideoComponent('Video Title','https://youtu.be/zuegQmMdy8M'))
+    this.page.addChild(new NoteComponent('Note Title',"fjsdflkdsjlfj"))
+    this.page.addChild(new TodoComponent('Todo Title','todoto'))
   }
   
   // section을 만들기 위해 constructor를 전달할 수 있다.

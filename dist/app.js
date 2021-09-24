@@ -15,6 +15,10 @@ class App {
         this.bindElementToDialog('#new-video', MediaSectionInput, (input) => new VideoComponent(input.title, input.url));
         this.bindElementToDialog('#new-note', TextSectionInput, (input) => new NoteComponent(input.title, input.body));
         this.bindElementToDialog('#new-todo', TextSectionInput, (input) => new TodoComponent(input.title, input.body));
+        this.page.addChild(new ImageComponent('Image Title', 'https://picsum.photos/800/400'));
+        this.page.addChild(new VideoComponent('Video Title', 'https://youtu.be/zuegQmMdy8M'));
+        this.page.addChild(new NoteComponent('Note Title', "fjsdflkdsjlfj"));
+        this.page.addChild(new TodoComponent('Todo Title', 'todoto'));
     }
     bindElementToDialog(selector, InputComponent, makeSection) {
         const element = document.querySelector(selector);
